@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التسجيل في المعهد</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .registration-container {
+            width: 300px;
+            background-color: #fff;
+            padding: 55px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .registration-container input, .registration-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .registration-container button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .registration-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <div class="registration-container">
+        <h2>التسجيل في المعهد</h2>
+        <form id="registrationForm">
+            <input type="text" id="fullName" placeholder="أدخل اسمك الرباعي" required>
+            <input type="number" id="age" placeholder="أدخل عمرك" required>
+            <input type="text" id="phone" placeholder="أدخل رقم هاتفك" required>
+            <input type="text" id="idNumber" placeholder="أدخل رقم هويتك" required>
+            <span>ادخل صورة الشهادة للصف الثالث الثانوي</span>
+            <input type="file" id="certificate" accept="image/*" required >
+            <button type="submit">إرسال البيانات</button>
+</center>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const fullName = document.getElementById("fullName").value;
+            const age = document.getElementById("age").value;
+            const phone = document.getElementById("phone").value;
+            const idNumber = document.getElementById("idNumber").value;
+            const certificate = document.getElementById("certificate").files[0];
+
+            // هنا يمكنك إضافة الكود لإرسال البيانات إلى قاعدة البيانات
+            console.log({
+                fullName,
+                age,
+                phone,
+                idNumber,
+                certificate
+            });
+
+            alert("تم إرسال البيانات بنجاح!");
+        });
+    </script>
+</body>
+</html>
